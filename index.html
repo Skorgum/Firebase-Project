@@ -10,37 +10,118 @@
 <title>Title</title>
 </head>
 <body>
-    <div class="container">    
-        <div class="jumbotron" style="background: black ; color: white ; text-align: center">
-                 <h1>Employee Data Management</h1>   
-                 <h3>A Comprehensive Directory of Employee Billable Hours</h3>
-        </div>  
-            <div class="card">
-            <h5 class="card-header">Add Employee</h5>
-                <form class="role" class="card-body" style="width: 95% ; margin: 20px;">
-                        <div class="form-group" >
-                        <label>Employee Name:</label>
-                        <input class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group">
-                        <label>Role:</label>
-                        <input class="form-control">
-                        </div>
-                        <div class="form-group">
-                        <label class="form-check-label">Start Date: (DD/MM/YY -ex: 01/01/89</label>
-                        <input class="form-control">
-                        </div>
-                        <div class="form-group">
-                        <label class="form-check-label">Monthly Rate:</label>
-                        <input class="form-control">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-
+<div class="container">
+    <br>
+    <!-- Jumbotron -->
+    <div class="jumbotron jumbo">
+    <h1 class="text-center">Employee Data Management</h1>
+    <h5 class="text-center">A Comprehensive Directory of Employee Bilable Hours</h5>
     </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <div class="row">
+    <div class="col-lg-12">
+        <div class="card card-default">
+        <div class="card-header">
+            Current Employees
+        </div>
+        <div class="card-body" id="recent-member">
+    <table class="table">
+    <thead>
+        <tr>
+        <th scope="col">Employee Name</th>
+        <th scope="col">Role</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">Months Worked</th>
+        <th scope="col">Monthly Rate ($)</th>
+        <th scope="col">Total Build ($)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        
+        <td id="name-display">Mark</td>
+        <td id="role-display">Salesperson</td>
+        <td id="start-display">12/12/19</td>
+        <td id="month-display">19</td>
+        <td id="monthly-display">74</td>
+        <td id="total-display">17777</td>
+        </tr>
+        
+    </tbody>
+    </table>
+            
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="row">
+    <!-- Sign-Up Card-->
+    
+    <div class="col-lg-12">
+        <div class="card card-default">
+        <div class="card-header">
+            Add Employees
+        </div>
+        <div class="card-body">
+            <!-- Sign-up Form (note the various input "types")-->
+            <form role="form">
+            <div class="form-group row">
+                <label for="name-input">Employee Name:</label>
+                <input class="form-control" id="name-input" type="text">
+            </div>
+            <div class="form-group row">
+                <label for="role-input">Role:</label>
+                <input class="form-control" id="rate-input" type="number">
+            </div>
+            <div class="form-group row">
+                <label for="start-input">Start Date (DD/MM/YY)</label>
+                <input class="form-control" id="date-input" type="date">
+            </div>
+            <div class="form-group row">
+                <label for="monthly-input">Monthly Rate</label>
+                <input class="form-control" id="monthly-input" type="number">
+            </div>
+            <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    <!-- Most Recent Member Card -->
+    
+    </div>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyC0WPtERu12nn3HM-TsFy6vu8FgrvfrtNM",
+    authDomain: "fir-class-project-83f18.firebaseapp.com",
+    databaseURL: "https://fir-class-project-83f18.firebaseio.com",
+    projectId: "fir-class-project-83f18",
+    storageBucket: "",
+    messagingSenderId: "328362433533",
+    appId: "1:328362433533:web:ae72a55cab4d7866"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  var database = firebase.database();
+  var employeeName = "";
+  var role = "";
+  var startDate = "";
+  var monthlyRate = "";
+  var monthsWorked = 0;
+  var totalBilled = 
+
+</script>
 </body>
+
 </html>
